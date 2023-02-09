@@ -11,5 +11,9 @@ name = "ch2-intro-to-numbers"
 version = "0.1.0"
 
 [[package]]
+name = "ch2-intro-vec"
+version = "0.1.0"
+
+[[package]]
 name = "ch2-str-simple-pattern"
 version = "0.1.0"
