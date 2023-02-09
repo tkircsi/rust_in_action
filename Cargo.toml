@@ -1,3 +1,3 @@
 [workspace]
 
-members = ["ch1-penguins", "ch2-intro-to-numbers"]
+members = ["ch1-penguins", "ch2-intro-to-numbers", "ch2-str-simple-pattern"]
