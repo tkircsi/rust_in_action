@@ -1,0 +1,11 @@
+[package]
+name = "grep-lite-2"
+version = "0.1.0"
+edition = "2021"
+authors = ["Tibor Kircsi <tkircsi@gmail.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1.7.1"
+clap = { version = "4.1.4", features = ["derive"] }

@@ -6,4 +6,5 @@ members = [
     "ch2-str-simple-pattern",
     "ch2-intro-vec",
     "ch2-grep-lite-regex",
+    "ch2-grep-lite-regex-2",
 ]

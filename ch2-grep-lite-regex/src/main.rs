@@ -1,5 +1,8 @@
 use clap::Parser;
 use regex::Regex;
+use std::fs::File;
+use std::io::prelude::*;
+use std::io::BufReader;
 
 /// Simple grep-lit program
 #[derive(Parser, Debug)]
@@ -8,6 +11,10 @@ struct Args {
     /// Pattern to search for
     #[arg(short, long)]
     pattern: String,
+
+    /// Input file
+    #[arg(short, long)]
+    input: String,
 }
 
 fn main() {
@@ -22,7 +29,7 @@ fn main() {
     println!("=== Regex find ===");
     search_regex(quote, search_term);
     println!("=== Cli find ===");
-    cli_search(quote, &args);
+    cli_search(&args);
 }
 
 /// Search for `search_term` in `quote`'s lines by using the `contains` method of str
@@ -45,10 +52,15 @@ fn search_regex(quote: &str, search_term: &str) {
     }
 }
 
-fn cli_search(quote: &str, args: &Args) {
+fn cli_search(args: &Args) {
     let re = Regex::new(&args.pattern).unwrap();
-    for line in quote.lines() {
-        match re.find(line) {
+    let input = &args.input;
+    let f = File::open(input).unwrap();
+    let reader = BufReader::new(f);
+
+    for line_ in reader.lines() {
+        let line = line_.unwrap();
+        match re.find(&line) {
             Some(_) => println!("{}", line),
             None => (),
         }
