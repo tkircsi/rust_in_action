@@ -21,6 +21,8 @@ fn main() {
     contains(quote, search_term);
     println!("=== Regex find ===");
     search_regex(quote, search_term);
+    println!("=== Cli find ===");
+    cli_search(quote, &args);
 }
 
 /// Search for `search_term` in `quote`'s lines by using the `contains` method of str
@@ -35,6 +37,16 @@ fn contains(quote: &str, search_term: &str) {
 fn search_regex(quote: &str, search_term: &str) {
     let re = Regex::new(search_term).unwrap();
 
+    for line in quote.lines() {
+        match re.find(line) {
+            Some(_) => println!("{}", line),
+            None => (),
+        }
+    }
+}
+
+fn cli_search(quote: &str, args: &Args) {
+    let re = Regex::new(&args.pattern).unwrap();
     for line in quote.lines() {
         match re.find(line) {
             Some(_) => println!("{}", line),
