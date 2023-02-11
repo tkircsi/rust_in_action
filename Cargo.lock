@@ -40,6 +40,14 @@ name = "ch2-str-simple-pattern"
 version = "0.1.0"
 
 [[package]]
+name = "ch3-mock-file"
+version = "0.1.0"
+
+[[package]]
+name = "ch3-not-quite-file"
+version = "0.1.0"
+
+[[package]]
 name = "clap"
 version = "4.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"

@@ -7,4 +7,6 @@ members = [
     "ch2-intro-vec",
     "ch2-grep-lite-regex",
     "ch2-grep-lite-regex-2",
+    "ch3-mock-file",
+    "ch3-not-quite-file",
 ]
