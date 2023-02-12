@@ -9,4 +9,5 @@ members = [
     "ch2-grep-lite-regex-2",
     "ch3-mock-file",
     "ch3-not-quite-file",
+    "ch3-def-files",
 ]
