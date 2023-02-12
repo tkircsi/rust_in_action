@@ -53,11 +53,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "ch3-file-states"
+version = "0.1.0"
+
+[[package]]
 name = "ch3-mock-file"
 version = "0.1.0"
 
 [[package]]
 name = "ch3-not-quite-file"
+version = "0.1.0"
+
+[[package]]
+name = "ch3-parse-logs"
 version = "0.1.0"
 
 [[package]]

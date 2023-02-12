@@ -10,4 +10,6 @@ members = [
     "ch3-mock-file",
     "ch3-not-quite-file",
     "ch3-def-files",
+    "ch3-parse-logs",
+    "ch3-file-states",
 ]
