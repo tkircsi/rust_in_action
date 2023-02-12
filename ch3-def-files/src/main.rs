@@ -1,4 +1,9 @@
 #![allow(unused_variables)]
+use rand::prelude::*;
+
+fn one_in(denominator: u32) -> bool {
+    thread_rng().gen_ratio(1, denominator)
+}
 
 #[derive(Debug)]
 struct File {
@@ -20,21 +25,29 @@ impl File {
         f
     }
 
-    fn read(self: &File, save_to: &mut Vec<u8>) -> usize {
+    fn read(self: &File, save_to: &mut Vec<u8>) -> Result<usize, String> {
         let mut tmp = self.data.clone();
         let read_length = tmp.len();
         save_to.reserve(read_length);
         save_to.append(&mut tmp);
-        read_length
+        Ok(read_length)
     }
 }
 
-fn open(f: &mut File) -> bool {
-    true
+fn open(f: File) -> Result<File, String> {
+    if one_in(10) {
+        let err_msg = String::from("Permission denied");
+        return Err(err_msg);
+    }
+    Ok(f)
 }
 
-fn close(f: &mut File) -> bool {
-    true
+fn close(f: File) -> Result<File, String> {
+    if one_in(100) {
+        let err_msg = String::from("Interrupted by signal");
+        return Err(err_msg);
+    }
+    Ok(f)
 }
 
 fn main() {
@@ -43,9 +56,9 @@ fn main() {
 
     let mut buffer: Vec<u8> = vec![];
 
-    open(&mut f3);
-    let f3_length = f3.read(&mut buffer);
-    close(&mut f3);
+    f3 = open(f3).unwrap();
+    let f3_length = f3.read(&mut buffer).unwrap();
+    f3 = close(f3).unwrap();
 
     let text = String::from_utf8_lossy(&buffer);
 
