@@ -12,4 +12,5 @@ members = [
     "ch3-def-files",
     "ch3-parse-logs",
     "ch3-file-states",
+    "ch3-skeleton-read-trait",
 ]
