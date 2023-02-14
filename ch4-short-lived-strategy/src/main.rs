@@ -1,7 +1,5 @@
 #![allow(unused_variables)]
 
-use std::result;
-
 #[derive(Debug)]
 struct CubeSat {
     id: u64,
