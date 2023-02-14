@@ -13,4 +13,6 @@ members = [
     "ch3-parse-logs",
     "ch3-file-states",
     "ch3-skeleton-read-trait",
+    "ch4-sat-mailbox",
+    "ch4-short-lived-strategy"
 ]

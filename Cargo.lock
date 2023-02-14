@@ -73,6 +73,14 @@ name = "ch3-skeleton-read-trait"
 version = "0.1.0"
 
 [[package]]
+name = "ch4-sat-mailbox"
+version = "0.1.0"
+
+[[package]]
+name = "ch4-short-lived-strategy"
+version = "0.1.0"
+
+[[package]]
 name = "clap"
 version = "4.1.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
